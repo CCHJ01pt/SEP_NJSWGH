@@ -32,7 +32,7 @@ gulp.task('serve',()=>{
 	require('./main.js');
 });
 gulp.task('default', gulp.series(
-	gulp.parallel('jshint','test', 'serve'
+	gulp.parallel('test','serve','jshint'
 		// ()=>{
 		// 	return gulp.src(['./*.js'])
 		// 	.pipe(jshint())
