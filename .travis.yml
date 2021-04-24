@@ -1,3 +1,5 @@
+before_install:
+  - npm install -g npx
 before_script:
   - npm install; npm install -g gulp
 script: gulp test
@@ -6,5 +8,5 @@ env:
   - PORT=7777
 node_js:
   - "5.1"
-  - "4"
+# - "4"
 #  - "0.12"

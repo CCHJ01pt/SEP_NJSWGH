@@ -1,12 +1,11 @@
 {
   "name": "github-integration",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "",
   "main": "main.js",
-  "scripts": {
-    "test": "node test.js",
-    "start": "gulp"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielstern/integration-test-repo.git"
@@ -20,11 +19,21 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.0",
     "jshint": "^2.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "start": "gulp",
+    "local": "set DEBUG=app,app:*&&nodemon app.js",
+    "lint": "eslint app.js",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.2"
   }
 }
