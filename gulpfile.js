@@ -26,7 +26,6 @@ gulp.task('test',()=>{
 gulp.task('serve',()=>{
 	require('./main.js');
 });
-
 gulp.task('default', gulp.series(
 	gulp.parallel('test', 'serve',
 		()=>{
@@ -36,3 +35,7 @@ gulp.task('default', gulp.series(
 		}
 	)
 ));
+gulp.task('message', function(done) {
+	console.log("HTTP Server Started");
+	done();
+});
