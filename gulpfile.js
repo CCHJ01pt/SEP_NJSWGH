@@ -32,8 +32,7 @@ gulp.task('default', gulp.series(
 		()=>{
 			return gulp.src('./*.js')
 			.pipe(jshint())
-			.pipe(jshint.reporter('default'))
-			.pipe(print(function() { return 'Done'; }));
+			.pipe(jshint.reporter('default'));
 		}
 	)
 ));
