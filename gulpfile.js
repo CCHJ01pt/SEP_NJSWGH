@@ -35,7 +35,7 @@ gulp.task('serve',()=>{
 });
 gulp.task('default', gulp.series(
 	gulp.parallel(
-		'serve','test','jshint'
+		'jshint','serve','test'
 		// ()=>{
 		// 	return gulp.src(['./*.js'])
 		// 	.pipe(jshint())
