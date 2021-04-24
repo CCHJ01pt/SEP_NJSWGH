@@ -17,20 +17,20 @@
 // 	require('./main.js');
 // });
 
-const { src, task, series, parallel } = require('gulp');
-const jshint = require('gulp-jshint');
+let gulp = require('gulp');
+let jshint = require('gulp-jshint');
 
-task('test',()=>{
+gulp.task('test',()=>{
 	require('./test.js');
 })
-task('serve',()=>{
+gulp.task('serve',()=>{
 	require('./main.js');
-});
+})
 
-task('default', series(
-	parallel('test', 'serve',
+gulp.task('default', gulp.series(
+	gulp.parallel('test', 'serve',
 		()=>{
-			return src('./*.js')
+			return gulp.src('./*.js')
 			.pipe(jshint())
 			.pipe(jshint.reporter('default'));
 		}
