@@ -17,15 +17,17 @@
 // 	require('./main.js');
 // });
 
-let {src, task, series, parallel} = require('gulp');
+let {src, task, series} = require('gulp');
 let jshint = require('gulp-jshint');
 
 task('test',(done)=>{
 	require('./test.js');
+
 	done();
 });
 task('serve',(done) => {
 	require('./main.js');
+
 	done();
 });
 task('default', series(
@@ -33,7 +35,7 @@ task('default', series(
 			return src(['./*.js'])
 			.pipe(jshint())
 			.pipe(jshint.reporter('default'));
-			
+
 			done();
 		}
 		,'serve','test'
