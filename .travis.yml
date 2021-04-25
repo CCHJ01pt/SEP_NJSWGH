@@ -1,5 +1,5 @@
-before_install:
-  - npm install -g npx
+# before_install:
+#   - npm install -g npx
 before_script:
   - npm install; npm install -g gulp
 script: gulp test
