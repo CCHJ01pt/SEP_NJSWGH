@@ -1,17 +1,16 @@
 {
   "name": "github-integration",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "",
   "main": "main.js",
-  "scripts": {
-    "test": "node test.js",
-    "start": "gulp"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielstern/integration-test-repo.git"
   },
-  "author": "",
+  "author": "CCHJ01pt",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/danielstern/integration-test-repo/issues"
@@ -25,6 +24,16 @@
     "jshint": "^2.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "start": "gulp",
+    "local": "set DEBUG=app,app:*&&nodemon app.js",
+    "lint": "eslint app.js",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.2"
   }
 }
